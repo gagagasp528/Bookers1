@@ -1,9 +1,10 @@
+<div class"ｃｏｍｍｅｎｔ"><%= flash[ :notice] %></div>
 
-<h2>Title</h2>
+
+<h3>Title</h3>
 <p><%= @book.title %></p>
-<h2>Body</h2>
+<h3>Body</h3>
 <p><%= @book.body %></p>
 
 <%= link_to "Edit",edit_book_path(@book) %>
 <%= link_to "Back",books_path(@book) %>
-<%= flash[ :notice] %>
