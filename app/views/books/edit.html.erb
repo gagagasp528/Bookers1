@@ -1,5 +1,16 @@
 <h1>Editing Book</h1>
 
+<% if @book.errors.any? %>
+  <%= @book.errors.count %> prohibited this book from being saved: 
+    <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+ </div>
+<% end %>
+
+
 <div class="field">
 <%= form_with model:@book, url:"/books/#{@book.id}", local:true do |f| %>
 <h5>Tiile</h5>
@@ -7,8 +18,6 @@
 <h5>Body</h5>
 <%= f.text_area :body %>
 <div>
- 
- 
 <div class="action"><%= f.submit 'Update Book' %></div>
 <% end %>
 
